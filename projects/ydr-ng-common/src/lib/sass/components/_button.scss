@@ -1,0 +1,26 @@
+@import 'utils/mixins';
+
+.ssc-button {
+  @include background-color(accent);
+  @include padding(1, 3);
+  @include color(white);
+  @include font-family(bold);
+  @include font-size(medium);
+  @include font-weight(bold);
+  @include border-radius(lg);
+  cursor: pointer;
+  text-transform: uppercase;
+  border: 0;
+  height: 4rem;
+  transition: color 500ms linear;
+  transition: background-color 500ms linear;
+
+  &:active {
+    box-shadow: none;
+  }
+
+  &:disabled {
+    @include background-color(grey);
+    color: darkgrey;
+  }
+}

@@ -1,0 +1,30 @@
+@import 'utils/mixins';
+
+:host {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.login__heading {
+    margin: 2rem;
+}
+.login__form {
+    width: 80%;
+}
+
+.login__input, .login__submit-button {
+    display: block;
+    margin: .5rem auto;
+    width: 100%;
+
+    @include min-width(phone) {
+        width: 50%;
+    }
+}
+
+.login__error-message {
+    @include margin(4);
+}

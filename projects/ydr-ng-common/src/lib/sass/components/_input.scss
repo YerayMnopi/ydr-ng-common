@@ -1,0 +1,19 @@
+@import 'utils/mixins';
+
+.ssc-input {
+  height: 3rem;
+  border: 0;
+  flex: 1;
+  @include padding(4);
+  @include font-size(medium);
+  @include line-height(none);
+  @include border-radius(lg);
+  @include background-color(background);
+
+  &::placeholder {
+    @include font-family(regular);
+    @include line-height(tight);
+    @include letter-spacing(normal);
+    @include margin(2);
+  }
+}

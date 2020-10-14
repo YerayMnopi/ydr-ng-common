@@ -1,0 +1,10 @@
+.hidden {
+  opacity: 0;
+  transition: opacity 100ms linear;
+  pointer-events: none;
+
+  &--show {
+    opacity: 1;
+    pointer-events: initial;
+  }
+}

@@ -1,0 +1,21 @@
+body {
+  box-sizing: border-box;
+  list-style: none;
+  position: relative;
+  min-height: 100%;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  list-style: inherit;
+  outline: none;
+}
+
+html {
+  height: 100%;
+}
+

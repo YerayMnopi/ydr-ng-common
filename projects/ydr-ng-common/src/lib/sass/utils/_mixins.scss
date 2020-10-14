@@ -1,0 +1,93 @@
+@import 'functions';
+@import 'vars';
+
+@mixin max-width($breakpoint) {
+  @each $name, $value in $breakpoints {
+    @if $breakpoint == $name {
+      @media (max-width: $value) {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin min-width($breakpoint) {
+  @each $name, $value in $breakpoints {
+    @if $breakpoint == $name {
+      @media (min-width: $value) {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin text-adjust($value) {
+  font-size: $value;
+  -ms-text-size-adjust: $value;
+  -webkit-text-size-adjust: $value;
+}
+
+@mixin color($color) {
+  color: get($colors, $color);
+}
+
+@mixin background-color($color) {
+  background-color: get($colors, $color);
+}
+
+@mixin fill($color) {
+  fill: get($colors, $color);
+}
+
+@mixin font-family($family) {
+  font-family: get($fonts, $family);
+}
+
+@mixin font-size($size) {
+  font-size: get($font-sizes, $size);
+}
+
+@mixin icon-font-size($size) {
+  font-size: get($icon-font-sizes, $size);
+}
+
+@mixin font-weight($weight) {
+  font-weight: get($font-weights, $weight);
+}
+
+@mixin line-height($height) {
+  line-height: get($line-heights, $height);
+}
+
+@mixin letter-spacing($space) {
+  letter-spacing: get($letter-spacings, $space);
+}
+
+@mixin border($width, $type: solid, $color: black) {
+  border: get($borders, $width) $type get($colors, $color);
+}
+
+@mixin border-radius($top-left, $top-right: $top-left, $bottom-right: $top-left, $bottom-left: $top-left) {
+  border-radius: get($border-radiuses, $top-left) get($border-radiuses, $top-right) get($border-radiuses, $bottom-right)
+    get($border-radiuses, $bottom-left);
+}
+
+@mixin padding($top, $right: $top, $bottom: $top, $left: $right) {
+  padding: get($paddings, $top) get($paddings, $right) get($paddings, $bottom) get($paddings, $left);
+}
+
+@mixin margin($top, $right: $top, $bottom: $top, $left: $right) {
+  margin: get($margins, $top) get($margins, $right) get($margins, $bottom) get($margins, $left);
+}
+
+@mixin shadow($type) {
+  box-shadow: get($shadows, $type);
+}
+
+@mixin z-index($level) {
+  z-index: get($z-indexes, $level);
+}
+
+@mixin opacity($percent) {
+  opacity: get($opacities, $percent);
+}

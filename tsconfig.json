@@ -14,7 +14,13 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ydr-ng-common": [
+        "dist/ydr-ng-common/ydr-ng-common",
+        "dist/ydr-ng-common"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

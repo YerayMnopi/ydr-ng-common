@@ -1,0 +1,17 @@
+@import 'utils/mixins';
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@900&family=Roboto+Slab:wght@200&display=swap');
+body {
+  @include line-height(tight);
+  @include font-size(medium);
+  @include font-family(regular);
+}
+
+html {
+  @include text-adjust(62.25%); //1rem = 10px
+}
+
+h1 {
+  @include color(primary);
+  @include font-size(xxl);
+  @include font-family(bold);
+}
