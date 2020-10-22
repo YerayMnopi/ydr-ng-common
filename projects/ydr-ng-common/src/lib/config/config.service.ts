@@ -7,7 +7,7 @@ import { Observable, of } from 'rxjs';
 })
 export class ConfigService {
 
-  apiUrl: 'http://api.localhost';
+  apiUrl = 'http://api.localhost';
 
   constructor() { }
 

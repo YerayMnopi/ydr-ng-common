@@ -13,7 +13,10 @@
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
             "tsConfig": "projects/ydr-ng-common/tsconfig.lib.json",
-            "project": "projects/ydr-ng-common/ng-package.json"
+            "project": "projects/ydr-ng-common/ng-package.json",
+            "stylePreprocessorOptions": {
+              "includePaths": ["projects/ydr-ng-common/src/lib/sass"]
+            }
           },
           "configurations": {
             "production": {
