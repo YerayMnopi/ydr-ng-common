@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { SseService } from '../sse.service';
+import { SseService } from 'ydr-ng-common';
 import { Observable } from 'rxjs';
 
 @Injectable({

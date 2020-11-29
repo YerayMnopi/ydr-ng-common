@@ -7,10 +7,6 @@ describe('SseService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(SseService);
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
 });

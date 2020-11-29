@@ -4,9 +4,9 @@ import { LoginComponent } from './login.component';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { AuthService } from '../auth/auth.service';
-import { AuthServiceMockFactory } from '../auth/auth.service.mock';
-import { Spied } from '../testing/spied';
+import { AuthService } from 'ydr-ng-common';
+import { AuthServiceMockFactory } from 'ydr-ng-common';
+import { Spied } from 'ydr-ng-common';
 import { of, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 

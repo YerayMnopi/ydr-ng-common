@@ -1,0 +1,11 @@
+{
+    "ngPackage": {
+      "lib": {
+        "entryFile": "registration.public-api.ts",
+        "styleIncludePaths": [
+          "../src/lib/sass",
+          "../src/lib/sass/main.scss"
+        ]
+      }
+    }
+  }

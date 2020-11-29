@@ -1,8 +1,8 @@
 import { Component, OnInit, ChangeDetectorRef, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { takeWhile } from 'rxjs/operators';
-import { AuthService } from '../auth/auth.service';
-import { LoginResponse } from '../auth/login-response';
+import { AuthService } from 'ydr-ng-common';
+import { LoginResponse } from 'ydr-ng-common';
 import { Router } from '@angular/router';
 
 @Component({
