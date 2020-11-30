@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { CanLoad, Route, UrlSegment, Router } from '@angular/router';
-import { AuthService } from './auth.service';
+import { AuthFacade } from './auth.facade';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -8,19 +10,22 @@ import { AuthService } from './auth.service';
 export class AuthGuard implements CanLoad {
 
   constructor(
-    private readonly authService: AuthService,
+    private readonly authFacade: AuthFacade,
     private readonly router: Router
   ) {}
 
   canLoad(
     route: Route,
     segments: UrlSegment[]
-  ): boolean {
-    if (!this.authService.token) {
-      this.router.navigateByUrl('auth');
-      return false;
-    }
-
-    return true;
+  ): Observable<boolean> {
+    return this.authFacade.token.pipe(
+      map(token => {
+        if (!token) {
+          this.router.navigateByUrl('auth');
+          return false;
+        }
+        return true;
+      })
+    );
   }
 }

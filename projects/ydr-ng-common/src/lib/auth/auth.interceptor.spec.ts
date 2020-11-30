@@ -1,15 +1,16 @@
 import { TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { AuthInterceptor } from './auth.interceptor';
-import { AuthService } from './auth.service';
-import { AuthServiceMockFactory, AuthServiceMock } from './auth.service.mock';
+import { AuthServiceMock } from './auth.service.mock';
 import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { defaultConfig } from '../config/config.constants';
+import { AuthFacade } from './auth.facade';
+import { AuthFacadeMockFactory } from './auth.facade.mock';
 
 describe('AuthInterceptor', () => {
   let httpMock: HttpTestingController;
   let httpClient: HttpClient;
-  let authService: AuthServiceMock;
+  let authFacade: AuthServiceMock;
   const url = `${defaultConfig.apiUrl}/token`;
 
   beforeEach(() => {
@@ -17,7 +18,7 @@ describe('AuthInterceptor', () => {
       imports: [HttpClientTestingModule],
       providers: [
         AuthInterceptor,
-        {provide: AuthService, useFactory: AuthServiceMockFactory},
+        {provide: AuthFacade, useFactory: AuthFacadeMockFactory},
         {
           provide: HTTP_INTERCEPTORS,
           useClass: AuthInterceptor,
@@ -28,7 +29,7 @@ describe('AuthInterceptor', () => {
 
     httpClient = TestBed.get(HttpClient);
     httpMock = TestBed.get(HttpTestingController);
-    authService = TestBed.get(AuthService);
+    authFacade = TestBed.get(AuthFacade);
   });
 
   it('should be created', () => {
@@ -36,25 +37,24 @@ describe('AuthInterceptor', () => {
     expect(interceptor).toBeTruthy();
   });
 
-  it('should not add bearer if there is no token', fakeAsync(() => {
-    let response;
+  it('should add bearer if there is a token', fakeAsync(() => {
+    httpClient.get(url).subscribe(res => {});
+    tick();
+    const request = httpMock.expectOne(url).request;
 
-    httpClient.get(url).subscribe(res => (response = res));
+    expect(request.headers.get('Authorization')).toBeTruthy();
+  }));
+
+  it('should not add bearer if there is no token', fakeAsync(() => {
+    authFacade.changeToken(null);
+    
+    httpClient.get(url).subscribe(res => {});
     tick();
     const request = httpMock.expectOne(url).request;
 
     expect(request.headers.get('Authorization')).toBeFalsy();
   }));
 
-  it('should add bearer if there is a token', fakeAsync(() => {
-    let response;
-    authService.changeToken('token');
 
-    httpClient.get(url).subscribe(res => (response = res));
-    tick();
-    const request = httpMock.expectOne(url).request;
-
-    expect(request.headers.get('Authorization')).toBeTruthy();
-  }));
 });
 

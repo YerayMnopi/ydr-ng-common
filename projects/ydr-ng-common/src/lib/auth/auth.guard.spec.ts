@@ -1,13 +1,14 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { AuthGuard } from './auth.guard';
-import { AuthService } from './auth.service';
-import { AuthServiceMockFactory, AuthServiceMock } from './auth.service.mock';
+import { AuthFacade } from './auth.facade';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Router } from '@angular/router';
+import { AuthFacadeMockFactory, AuthFacadeMock } from './auth.facade.mock';
+import { of } from 'rxjs';
 
 describe('AuthGuard', () => {
   let guard: AuthGuard;
-  let authService: AuthServiceMock;
+  let authFacade: AuthFacadeMock;
   let router: Router;
 
   beforeEach(() => {
@@ -16,11 +17,12 @@ describe('AuthGuard', () => {
         RouterTestingModule
       ],
       providers: [
-        {provide: AuthService, useFactory: AuthServiceMockFactory}
+        {provide: AuthFacade, useFactory: AuthFacadeMockFactory},
+        AuthGuard
       ]
     });
     guard = TestBed.inject(AuthGuard);
-    authService = TestBed.get(AuthService);
+    authFacade = TestBed.get(AuthFacade);
     router = TestBed.inject(Router);
   });
 
@@ -28,15 +30,24 @@ describe('AuthGuard', () => {
     expect(guard).toBeTruthy();
   });
 
-  it('should return true if there is an access token', () => {
-    authService.changeToken('token');
+  it('should return true if there is an access token', fakeAsync(() => {
+    let canLoad: boolean;
 
-    expect(guard.canLoad({}, [])).toBe(true);
-  });
+    guard.canLoad({}, []).subscribe(
+      result => canLoad = result
+    );
+    tick();
 
-  it('should redirect to /auth if there is not an access token', () => {
+    expect(canLoad).toBe(true);
+  }));
+
+  it('should redirect to /auth if there is not an access token', fakeAsync(() => {
+    authFacade.changeToken(null);
     const routerSpy = spyOn(router, 'navigateByUrl');
-    guard.canLoad({}, []);
+
+    guard.canLoad({}, []).subscribe(() => {});
+    tick();
+
     expect(routerSpy).toHaveBeenCalledWith('auth');
-  });
+  }));
 });

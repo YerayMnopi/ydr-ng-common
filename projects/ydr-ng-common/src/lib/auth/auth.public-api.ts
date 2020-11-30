@@ -5,4 +5,4 @@ export * from './auth.service.mock';
 export * from './login-payload';
 export * from './login-response';
 export * from './auth.facade';
-export * from './auth.actions';
+export * from './auth.facade.mock';

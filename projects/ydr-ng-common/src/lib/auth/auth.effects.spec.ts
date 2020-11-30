@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 
 import { AuthEffects } from './auth.effects';
 import { AuthService } from './auth.service';
+import { AuthServiceMockFactory } from './auth.service.mock';
 
 describe('AuthEffects', () => {
   let actions$: Observable<any>;
@@ -12,7 +13,7 @@ describe('AuthEffects', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
-        {provide: AuthService, useValue: {}},
+        {provide: AuthService, useFactory: AuthServiceMockFactory},
         AuthEffects,
         provideMockActions(() => actions$),
       ]
