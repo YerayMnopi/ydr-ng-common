@@ -1,8 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { takeWhile } from 'rxjs/operators';
-import { AuthService } from 'ydr-ng-common';
-import { LoginResponse } from 'ydr-ng-common';
+import { LoginResponse, AuthFacade, Login } from 'ydr-ng-common';
 import { Router } from '@angular/router';
 
 @Component({
@@ -34,7 +33,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   private subscriptionActive = true;
 
   constructor(
-    private readonly authService: AuthService,
+    private readonly authFacade: AuthFacade,
     private readonly changeDetector: ChangeDetectorRef,
     private readonly formBuilder: FormBuilder,
     private readonly router: Router
@@ -54,7 +53,10 @@ export class LoginComponent implements OnInit, OnDestroy {
   login() {
     this.loginFailed = false;
 
-    this.authService.login(this.form.value).pipe(
+    this.authFacade.login(this.form.value);
+    
+    /*
+    this.pipe(
       takeWhile(() => this.subscriptionActive)
     ).subscribe(
       (loginResponse: LoginResponse) => this.router.navigateByUrl(''),
@@ -63,6 +65,7 @@ export class LoginComponent implements OnInit, OnDestroy {
         this.changeDetector.detectChanges();
       }
     );
+    */
   }
 
   /**

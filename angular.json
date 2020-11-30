@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "ydr-ng-common": {
@@ -28,7 +28,9 @@
             "tsConfig": "projects/ydr-ng-common/tsconfig.spec.json",
             "karmaConfig": "projects/ydr-ng-common/karma.conf.js",
             "stylePreprocessorOptions": {
-              "includePaths": ["projects/ydr-ng-common/src/lib/sass"]
+              "includePaths": [
+                "projects/ydr-ng-common/src/lib/sass"
+              ]
             }
           }
         },
@@ -45,6 +47,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ydr-ng-common"
+    }
+  },
+  "defaultProject": "ydr-ng-common",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
