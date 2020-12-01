@@ -11,6 +11,7 @@ export const AuthFacadeMockFactory = (): AuthFacadeMock => {
   );
 
   authServiceMock.token = of('test');
+  authServiceMock.loginError = of(new Error());
   authServiceMock.changeToken = (value: string | null) => {
     authServiceMock.token = of(value);
   };

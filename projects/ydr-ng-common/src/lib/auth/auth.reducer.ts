@@ -13,7 +13,7 @@ export const authInitialState: AuthState = {
 
 export const reducer = createReducer(
   authInitialState,
-  on(AuthActions.loginSuccess,
+  on(AuthActions.LoginSuccess,
     (state, action) => {
       return {...state, ...{accessToken: action.accessToken}}
     }

@@ -3,8 +3,11 @@ import { provideMockStore } from '@ngrx/store/testing';
 
 import { AuthFacade } from './auth.facade';
 import { authInitialState } from './auth.reducer';
+import { provideMockActions } from '@ngrx/effects/testing';
+import { Observable } from 'rxjs';
 
 describe('Auth.FacadeService', () => {
+  let actions$: Observable<any>;
   let service: AuthFacade;
 
   beforeEach(() => {
@@ -12,7 +15,8 @@ describe('Auth.FacadeService', () => {
       providers: [
         provideMockStore({
           initialState: authInitialState
-        })
+        }),
+        provideMockActions(() => actions$),
       ]
     });
     service = TestBed.inject(AuthFacade);

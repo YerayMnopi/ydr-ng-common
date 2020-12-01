@@ -18,8 +18,8 @@ export class AuthEffects {
       ofType(AuthActions.Login),
       concatMap((action) =>
         this.authService.login(action.payload).pipe(
-          map((loginResponse: LoginResponse) => AuthActions.loginSuccess(loginResponse)),
-          catchError(error => of(AuthActions.loginFailure({ error }))))
+          map((loginResponse: LoginResponse) => AuthActions.LoginSuccess(loginResponse)),
+          catchError(error => of(AuthActions.LoginFailure({ error }))))
       )
     );
   });

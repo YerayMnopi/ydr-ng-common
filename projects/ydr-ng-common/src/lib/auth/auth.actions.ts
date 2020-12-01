@@ -6,12 +6,12 @@ export const Login = createAction(
   props<{payload: LoginPayload}>()
 );
 
-export const loginSuccess = createAction(
+export const LoginSuccess = createAction(
   '[Auth]  Login success', 
   props<{ accessToken: string }>()
 );
 
-export const loginFailure = createAction(
+export const LoginFailure = createAction(
   '[Auth]  Login failure', 
   props<{ error: {} }>()
 );

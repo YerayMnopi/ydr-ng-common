@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
-import { takeWhile } from 'rxjs/operators';
-import { LoginResponse, AuthFacade } from 'ydr-ng-common';
+import { takeWhile, filter } from 'rxjs/operators';
+import { AuthFacade } from 'ydr-ng-common';
 import { Router } from '@angular/router';
 
 @Component({
@@ -41,10 +41,13 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.buildForm();
+    this.onLoginSuccess();
+    this.onLoginError();
   }
 
   ngOnDestroy() {
     this.subscriptionActive = false;
+
   }
 
   /**
@@ -54,18 +57,26 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.loginFailed = false;
 
     this.authFacade.login(this.form.value);
-    
-    /*
-    this.pipe(
-      takeWhile(() => this.subscriptionActive)
+  }
+
+  private onLoginSuccess() {
+    this.authFacade.token.pipe(
+      takeWhile(() => this.subscriptionActive),
+      filter(token => !!token)
     ).subscribe(
-      (loginResponse: LoginResponse) => this.router.navigateByUrl(''),
+      token => this.router.navigateByUrl('')
+    );
+  }
+
+  private onLoginError() {
+    this.authFacade.loginError.pipe(
+      takeWhile(() => this.subscriptionActive),
+    ).subscribe(
       error => {
         this.loginFailed = true;
         this.changeDetector.detectChanges();
       }
     );
-    */
   }
 
   /**
