@@ -7,9 +7,7 @@ import { LoginPayload } from './login-payload';
 import { Login, LoginFailure } from './auth.actions';
 import { Actions, ofType } from '@ngrx/effects';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AuthFacade {
 
   token: Observable<string>;

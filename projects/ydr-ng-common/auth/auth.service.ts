@@ -1,13 +1,11 @@
 import { Injectable } from '@angular/core';
-import { ApiService } from '../api/api.service';
+import { ApiService } from 'ydr-ng-common';
 import { Observable } from 'rxjs';
 import { LoginResponse } from './login-response';
 import { LoginPayload } from './login-payload';
 import { tap } from 'rxjs/operators';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AuthService {
 
   private privateToken: string | null = null;

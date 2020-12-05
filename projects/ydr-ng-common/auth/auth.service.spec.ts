@@ -1,11 +1,9 @@
 import { TestBed, fakeAsync, tick } from '@angular/core/testing';
 
 import { AuthService } from './auth.service';
-import { ApiService } from '../api/api.service';
-import { ApiServiceMockFactory } from '../api/api.service.mock';
+import { ApiService, ApiServiceMockFactory, Spied } from 'ydr-ng-common';
 import { LoginPayload } from './login-payload';
 import { of } from 'rxjs';
-import { Spied } from '../testing/spied';
 
 describe('AuthService', () => {
   let service: AuthService;
@@ -15,7 +13,8 @@ describe('AuthService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
-        {provide: ApiService, useFactory: ApiServiceMockFactory}
+        {provide: ApiService, useFactory: ApiServiceMockFactory},
+        AuthService
       ]
     });
     service = TestBed.inject(AuthService);

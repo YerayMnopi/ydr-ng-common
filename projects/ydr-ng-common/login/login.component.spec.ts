@@ -4,17 +4,15 @@ import { LoginComponent } from './login.component';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { AuthService } from 'ydr-ng-common';
-import { AuthServiceMockFactory } from 'ydr-ng-common';
-import { Spied } from 'ydr-ng-common';
-import { of, throwError } from 'rxjs';
+import { AuthFacade, AuthFacadeMockFactory, AuthFacadeMock } from 'ydr-ng-common/auth';
+import { of } from 'rxjs';
 import { Router } from '@angular/router';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
   let submitButtonDebugElement: DebugElement;
-  let authService: Spied<AuthService>;
+  let authFacade: AuthFacadeMock;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -25,15 +23,16 @@ describe('LoginComponent', () => {
       ],
       providers: [
         FormBuilder,
-        {provide: AuthService, useFactory: AuthServiceMockFactory}
+        {provide: AuthFacade, useFactory: AuthFacadeMockFactory},
+
       ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    authService = TestBed.get(AuthService);
-    authService.login.and.returnValue(of({accessToken: 'test'}));
+    authFacade = TestBed.get(AuthFacade);
+    authFacade.login.and.returnValue(of({accessToken: 'test'}));
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -78,7 +77,7 @@ describe('LoginComponent', () => {
 
       submitButtonDebugElement.triggerEventHandler('click', null);
 
-      expect(authService.login).toHaveBeenCalledWith(fakeCredentials);
+      expect(authFacade.login).toHaveBeenCalledWith(fakeCredentials);
     });
   });
 
@@ -90,14 +89,15 @@ describe('LoginComponent', () => {
       fixture.detectChanges();
     });
 
-    it('should redirect to transactions page on login success', () => {
+    it('should redirect to transactions page on login success', fakeAsync(() => {
       const router = TestBed.inject(Router);
       const routerSpy = spyOn(router, 'navigateByUrl');
 
       submitButtonDebugElement.triggerEventHandler('click', null);
-
+      authFacade.changeToken('test');
+      
       expect(routerSpy).toHaveBeenCalledWith('');
-    });
+    }));
 
     it('should hide the error message until login failed', () => {
       const errorMessage = fixture.debugElement.query(By.css('.login__error-message'));
@@ -105,15 +105,14 @@ describe('LoginComponent', () => {
       expect(errorMessage).toBeFalsy();
     });
 
-    it('should show an error message on login failed', () => {
-      authService.login.and.returnValue(throwError(new Error()));
-
-      submitButtonDebugElement.triggerEventHandler('click', null);
+    it('should show an error message on login failed', fakeAsync(() => {
+      authFacade.sendLoginError();
+      tick();
       fixture.detectChanges();
       const errorMessage = fixture.debugElement.query(By.css('.login__error-message'));
 
       expect(errorMessage).toBeTruthy();
-    });
+    }));
 
   });
 

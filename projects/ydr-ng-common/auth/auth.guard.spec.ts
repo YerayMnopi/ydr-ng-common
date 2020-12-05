@@ -4,7 +4,6 @@ import { AuthFacade } from './auth.facade';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Router } from '@angular/router';
 import { AuthFacadeMockFactory, AuthFacadeMock } from './auth.facade.mock';
-import { of } from 'rxjs';
 
 describe('AuthGuard', () => {
   let guard: AuthGuard;

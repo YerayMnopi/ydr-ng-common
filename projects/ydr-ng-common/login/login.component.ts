@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { takeWhile, filter } from 'rxjs/operators';
-import { AuthFacade } from 'ydr-ng-common';
+import { AuthFacade } from 'ydr-ng-common/auth';
 import { Router } from '@angular/router';
 
 @Component({

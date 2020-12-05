@@ -4,9 +4,7 @@ import { AuthFacade } from './auth.facade';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AuthGuard implements CanLoad {
 
   constructor(

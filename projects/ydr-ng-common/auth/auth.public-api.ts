@@ -6,3 +6,4 @@ export * from './login-payload';
 export * from './login-response';
 export * from './auth.facade';
 export * from './auth.facade.mock';
+export * from './auth.module';

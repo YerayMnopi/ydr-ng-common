@@ -3,7 +3,6 @@ import { AuthInterceptor } from './auth.interceptor';
 import { AuthServiceMock } from './auth.service.mock';
 import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { defaultConfig } from '../config/config.constants';
 import { AuthFacade } from './auth.facade';
 import { AuthFacadeMockFactory } from './auth.facade.mock';
 
@@ -11,7 +10,7 @@ describe('AuthInterceptor', () => {
   let httpMock: HttpTestingController;
   let httpClient: HttpClient;
   let authFacade: AuthServiceMock;
-  const url = `${defaultConfig.apiUrl}/token`;
+  const url = `http://test.com/token`;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
