@@ -1,12 +1,11 @@
 import { TestBed, fakeAsync, tick } from '@angular/core/testing';
 
-import { AuthService } from './auth.service';
+import { UserService } from './user.service';
 import { ApiService, ApiServiceMockFactory, Spied } from 'ydr-ng-common';
-import { LoginPayload } from './login-payload';
 import { of } from 'rxjs';
 
-describe('AuthService', () => {
-  let service: AuthService;
+describe('UserService', () => {
+  let service: UserService;
   let apiService: Spied<ApiService>;
   const fakeAccessToken = 'token';
 
@@ -14,31 +13,27 @@ describe('AuthService', () => {
     TestBed.configureTestingModule({
       providers: [
         {provide: ApiService, useFactory: ApiServiceMockFactory},
-        AuthService
+        UserService
       ]
     });
-    service = TestBed.inject(AuthService);
+    service = TestBed.inject(UserService);
     apiService = TestBed.get(ApiService);
-    apiService.post.and.returnValue(of({accessToken: fakeAccessToken}));
+    apiService.get.and.returnValue(of({accessToken: fakeAccessToken}));
   });
 
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
 
-  describe('token', () => {
-    const fakeUser: LoginPayload = {
-      email: 'test',
-      password: 'test'
-    };
-
+  describe('load', () => {
+  
     beforeEach(fakeAsync(() => {
-      service.login(fakeUser).subscribe();
+      service.load().subscribe();
       tick();
     }));
 
-    it('should obtain a token', () => {
-      expect(apiService.post).toHaveBeenCalledWith(service.endpoint, fakeUser);
+    it('should load an user', () => {
+      expect(apiService.get).toHaveBeenCalledWith(`${service.endpoint}`);
     });
 
   });

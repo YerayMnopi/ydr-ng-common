@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { CanLoad, Route, UrlSegment, Router } from '@angular/router';
 import { AuthFacade } from './auth.facade';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, first } from 'rxjs/operators';
 
 @Injectable()
 export class AuthGuard implements CanLoad {
@@ -17,6 +17,7 @@ export class AuthGuard implements CanLoad {
     segments: UrlSegment[]
   ): Observable<boolean> {
     return this.authFacade.token.pipe(
+      first(),
       map(token => {
         if (!token) {
           this.router.navigateByUrl('auth');

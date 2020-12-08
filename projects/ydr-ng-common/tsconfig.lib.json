@@ -11,7 +11,10 @@
     "lib": [
       "dom",
       "es2018"
-    ]
+    ],
+    "paths": {
+      "ydr-ng-common": ["../../ydr-ng-common"],
+    }
   },
   "angularCompilerOptions": {
     "skipTemplateCodegen": true,
