@@ -9,10 +9,5 @@ export const AuthServiceMockFactory = (): AuthServiceMock => {
     ['login'],
   );
 
-  authServiceMock.token = null;
-  authServiceMock.changeToken = (value: string | null) => {
-    authServiceMock.token = value;
-  };
-
   return authServiceMock;
 };

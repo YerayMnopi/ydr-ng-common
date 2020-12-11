@@ -7,11 +7,11 @@ export const Login = createAction(
 );
 
 export const LoginSuccess = createAction(
-  '[Auth]  Login success', 
+  '[Auth] Login success', 
   props<{ accessToken: string }>()
 );
 
 export const LoginFailure = createAction(
-  '[Auth]  Login failure', 
+  '[Auth] Login failure', 
   props<{ error: {} }>()
 );

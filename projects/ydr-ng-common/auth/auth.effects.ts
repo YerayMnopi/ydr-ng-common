@@ -14,7 +14,6 @@ export class AuthEffects {
 
   login$ = createEffect(() => {
     return this.actions$.pipe( 
-
       ofType(AuthActions.Login),
       concatMap((action) =>
         this.authService.login(action.payload).pipe(
@@ -23,8 +22,6 @@ export class AuthEffects {
       )
     );
   });
-
-
 
   constructor(
     private readonly actions$: Actions,
