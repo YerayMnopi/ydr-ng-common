@@ -12,7 +12,7 @@ import { UserResponse } from './user-create.payload';
 @Injectable()
 export class UserEffects {
 
-  login$ = createEffect(() => {
+  load$ = createEffect(() => {
     return this.actions$.pipe( 
 
       ofType(UserActions.Load),

@@ -6,11 +6,11 @@ export const Load = createAction(
 );
 
 export const LoadSuccess = createAction(
-  '[User]  Load success', 
+  '[User] Load success', 
   props<{ user: UserResponse }>()
 );
 
 export const LoadFailure = createAction(
-  '[User]  Load failure', 
+  '[User] Load failure', 
   props<{ error: {} }>()
 );
