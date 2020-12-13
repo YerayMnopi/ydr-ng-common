@@ -1,21 +1,21 @@
 import { Observable, fromEvent } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-export class SseService {
+export class SseService<T> {
   private eventSource: EventSource;
   
-  constructor(private endpoint: string) { }
+  constructor() { }
 
-  GetExchangeData(): Observable<any> {
+  GetExchangeData(endpoint: string): Observable<T> {
     if (typeof(EventSource) === 'undefined') {
       return
     }
   
-    this.eventSource = new EventSource(this.endpoint);
+    this.eventSource = new EventSource(endpoint);
 
     this.eventSource.onerror = function(e) {
       console.log(e);
-      if(this.readyState==0) {
+      if (this.readyState==0) {
         console.log('Reconnecting…');
       }
     }
@@ -25,15 +25,6 @@ export class SseService {
         return JSON.parse(event.data);
       })
     );
-
-    /*
-    this.evs.addEventListener(
-      "timestamp",
-      function(e) {
-        console.log("Timestamp event Received.Ready State is " + this.readyState);
-        subject.next(e["data"]);
-      }
-    )*/
 
   }
 

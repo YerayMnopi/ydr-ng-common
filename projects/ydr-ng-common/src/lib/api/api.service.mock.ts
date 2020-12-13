@@ -5,4 +5,5 @@ export const ApiServiceMockFactory = (): Spied<ApiService> =>
   jasmine.createSpyObj('MockApiService', [
     'get',
     'post',
+    'composeRequestUrl'
   ]);

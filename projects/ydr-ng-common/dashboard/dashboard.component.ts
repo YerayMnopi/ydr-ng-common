@@ -16,12 +16,14 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    /*
     this.dashboardService.getNotifications().subscribe(
       notification => {
         this.notifications = this.notifications.concat([notification]);
         this.changeDetector.detectChanges();
       }
     );
+    */
   }
 
 }

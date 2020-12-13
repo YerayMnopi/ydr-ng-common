@@ -1,17 +1,10 @@
 import { Injectable } from '@angular/core';
-import { SseService } from 'ydr-ng-common';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DashboardService extends SseService {
+export class DashboardService {
 
-  constructor() {
-    super('http://localhost:3001/notifications/sse');
-  }
+  constructor() {}
 
-  getNotifications(): Observable<Notification> {
-    return this.GetExchangeData();
-  }
 }
