@@ -3,7 +3,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, map, concatMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 
-import * as NotificationActions from './notification.actions';
+import * as NotificationActions from './notifications.actions';
 import { NotificationsService } from './notifications.service';
 
 

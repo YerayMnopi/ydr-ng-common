@@ -1,4 +1,4 @@
-import * as fromNotification from './notification.actions';
+import * as fromNotification from './notifications.actions';
 
 describe('loadNotifications', () => {
   it('should return an action', () => {

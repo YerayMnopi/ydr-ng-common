@@ -1,5 +1,5 @@
-import * as fromNotification from './notification.reducer';
-import { selectNotificationState } from './notification.selectors';
+import * as fromNotification from './notifications.reducer';
+import { selectNotificationState } from './notifications.selectors';
 
 describe('Notification Selectors', () => {
   it('should select the feature state', () => {

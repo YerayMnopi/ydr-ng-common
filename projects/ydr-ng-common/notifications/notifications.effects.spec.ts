@@ -2,11 +2,11 @@ import { TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { Observable, of, throwError } from 'rxjs';
 
-import { NotificationEffects } from './notification.effects';
+import { NotificationEffects } from './notifications.effects';
 import { NotificationsService } from './notifications.service';
 import { notificationMockFactory } from './notification.mock';
 import { NotificationsServiceMock, notificationsServiceMockFactory } from './notifications.service.mock';
-import { loadNotifications, loadNotificationsSuccess, loadNotificationsFailure } from './notification.actions';
+import { loadNotifications, loadNotificationsSuccess, loadNotificationsFailure } from './notifications.actions';
 import { Action } from '@ngrx/store';
 
 describe('NotificationEffects', () => {

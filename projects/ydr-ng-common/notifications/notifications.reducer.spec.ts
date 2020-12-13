@@ -1,5 +1,5 @@
-import { reducer, initialState } from './notification.reducer';
-import { loadNotificationsSuccess } from './notification.actions';
+import { reducer, initialState } from './notifications.reducer';
+import { loadNotificationsSuccess } from './notifications.actions';
 import { notificationMockFactory } from './notification.mock';
 
 describe('Notification Reducer', () => {
