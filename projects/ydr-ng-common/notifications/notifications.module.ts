@@ -5,6 +5,7 @@ import { StoreModule } from '@ngrx/store';
 import * as fromNotification from './notifications.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { NotificationEffects } from './notifications.effects';
+import { NotificationsFacade } from './notifications.facade';
 
 @NgModule({
   declarations: [],
@@ -14,7 +15,8 @@ import { NotificationEffects } from './notifications.effects';
     EffectsModule.forFeature([NotificationEffects])
   ],
   providers: [
-    NotificationsService
+    NotificationsService,
+    NotificationsFacade
   ]
 })
 export class NotificationsModule { }

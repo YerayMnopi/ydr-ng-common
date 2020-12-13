@@ -9,6 +9,8 @@
     "paths": {
       "ydr-ng-common": ["projects/ydr-ng-common/src/public-api.ts"],
       "ydr-ng-common/auth": ["projects/ydr-ng-common/auth/auth.public-api.ts"],
+      "ydr-ng-common/notifications": ["projects/ydr-ng-common/notifications/notifications.public-api.ts"],
+
     }
   },
   "files": [
