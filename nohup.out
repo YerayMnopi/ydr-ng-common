@@ -1,0 +1,444 @@
+
+> ydr-ng-common@0.0.5 link /Users/n226510/yeray/front/ydr-ng-common
+> npm run build && cd dist/ydr-ng-common/ && npm link
+
+
+> ydr-ng-common@0.0.5 link /Users/n226510/yeray/front/ydr-ng-common
+> npm run build && cd dist/ydr-ng-common/ && npm link
+
+
+> ydr-ng-common@0.0.5 build /Users/n226510/yeray/front/ydr-ng-common
+> ng build
+
+Building Angular Package
+******************************************************************************
+It is not recommended to publish Ivy libraries to NPM repositories.
+Read more here: https://v9.angular.io/guide/ivy#maintaining-library-compatibility
+******************************************************************************
+
+------------------------------------------------------------------------------
+Building entry point 'ydr-ng-common'
+------------------------------------------------------------------------------
+Compiling TypeScript sources through ngc
+Bundling to FESM2015
+Bundling to UMD
+WARNING: No name was provided for external module '@ngrx/store' in output.globals – guessing 'i1$2'
+WARNING: No name was provided for external module '@ngrx/store-devtools' in output.globals – guessing 'i2'
+WARNING: No name was provided for external module '@ngrx/effects' in output.globals – guessing 'i1$1'
+Minifying UMD bundle
+Copying assets
+Writing package metadata
+Built ydr-ng-common
+
+------------------------------------------------------------------------------
+Building entry point 'ydr-ng-common/registration'
+------------------------------------------------------------------------------
+Compiling TypeScript sources through ngc
+Bundling to FESM2015
+Bundling to UMD
+Minifying UMD bundle
+Writing package metadata
+Built ydr-ng-common/registration
+
+------------------------------------------------------------------------------
+Building entry point 'ydr-ng-common/auth'
+------------------------------------------------------------------------------
+Compiling TypeScript sources through ngc
+Bundling to FESM2015
+Bundling to UMD
+WARNING: No name was provided for external module '@ngrx/store' in output.globals – guessing 'i1'
+WARNING: No name was provided for external module '@ngrx/effects' in output.globals – guessing 'i2'
+Minifying UMD bundle
+Writing package metadata
+Built ydr-ng-common/auth
+
+------------------------------------------------------------------------------
+Building entry point 'ydr-ng-common/notifications'
+------------------------------------------------------------------------------
+Compiling TypeScript sources through ngc
+Bundling to FESM2015
+Bundling to UMD
+WARNING: No name was provided for external module '@ngrx/store' in output.globals – guessing 'i1$1'
+WARNING: No name was provided for external module '@ngrx/entity' in output.globals – guessing 'entity'
+WARNING: No name was provided for external module '@ngrx/effects' in output.globals – guessing 'i2'
+Minifying UMD bundle
+Writing package metadata
+Built ydr-ng-common/notifications
+
+------------------------------------------------------------------------------
+Building entry point 'ydr-ng-common/user'
+------------------------------------------------------------------------------
+Compiling TypeScript sources through ngc
+Bundling to FESM2015
+Bundling to UMD
+WARNING: No name was provided for external module '@ngrx/store' in output.globals – guessing 'i1'
+WARNING: No name was provided for external module '@ngrx/effects' in output.globals – guessing 'i2'
+Minifying UMD bundle
+Writing package metadata
+Built ydr-ng-common/user
+
+------------------------------------------------------------------------------
+Building entry point 'ydr-ng-common/dashboard'
+------------------------------------------------------------------------------
+Compiling TypeScript sources through ngc
+Bundling to FESM2015
+Bundling to UMD
+Minifying UMD bundle
+Writing package metadata
+Built ydr-ng-common/dashboard
+
+------------------------------------------------------------------------------
+Building entry point 'ydr-ng-common/login'
+------------------------------------------------------------------------------
+Compiling TypeScript sources through ngc
+Bundling to FESM2015
+Bundling to UMD
+Minifying UMD bundle
+Writing package metadata
+Built ydr-ng-common/login
+
+------------------------------------------------------------------------------
+Built Angular Package
+ - from: /Users/n226510/yeray/front/ydr-ng-common/projects/ydr-ng-common
+ - to:   /Users/n226510/yeray/front/ydr-ng-common/dist/ydr-ng-common
+------------------------------------------------------------------------------
+npm WARN registry Using stale data from https://nexus.ss.universia.net/repository/npm-global/ because the host is inaccessible -- are you offline?
+npm WARN registry Using stale data from https://nexus.ss.universia.net/repository/npm-global/ due to a request error during revalidation.
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN ydr-ng-common@0.0.6 requires a peer of @angular/common@^9.0.7 but none is installed. You must install peer dependencies yourself.
+npm WARN ydr-ng-common@0.0.6 requires a peer of @angular/core@^9.0.7 but none is installed. You must install peer dependencies yourself.
+npm WARN ydr-ng-common@0.0.6 No repository field.
+npm WARN ydr-ng-common@0.0.6 No license field.
+
+added 1 package from 1 contributor in 0.28s
+/Users/n226510/.nvm/versions/node/v12.16.1/lib/node_modules/ydr-ng-common -> /Users/n226510/yeray/front/ydr-ng-common/dist/ydr-ng-common
+
+> ydr-ng-common@0.0.5 link /Users/n226510/yeray/front/ydr-ng-common
+> npm run build && cd dist/ydr-ng-common/ && npm link
+
+
+> ydr-ng-common@0.0.5 build /Users/n226510/yeray/front/ydr-ng-common
+> ng build
+
+Building Angular Package
+******************************************************************************
+It is not recommended to publish Ivy libraries to NPM repositories.
+Read more here: https://v9.angular.io/guide/ivy#maintaining-library-compatibility
+******************************************************************************
+
+------------------------------------------------------------------------------
+Building entry point 'ydr-ng-common'
+------------------------------------------------------------------------------
+Compiling TypeScript sources through ngc
+Bundling to FESM2015
+Bundling to UMD
+WARNING: No name was provided for external module '@ngrx/store' in output.globals – guessing 'i1$2'
+WARNING: No name was provided for external module '@ngrx/store-devtools' in output.globals – guessing 'i2'
+WARNING: No name was provided for external module '@ngrx/effects' in output.globals – guessing 'i1$1'
+Minifying UMD bundle
+Copying assets
+Writing package metadata
+Built ydr-ng-common
+
+------------------------------------------------------------------------------
+Building entry point 'ydr-ng-common/registration'
+------------------------------------------------------------------------------
+Compiling TypeScript sources through ngc
+Bundling to FESM2015
+Bundling to UMD
+Minifying UMD bundle
+Writing package metadata
+Built ydr-ng-common/registration
+
+------------------------------------------------------------------------------
+Building entry point 'ydr-ng-common/auth'
+------------------------------------------------------------------------------
+Compiling TypeScript sources through ngc
+Bundling to FESM2015
+Bundling to UMD
+WARNING: No name was provided for external module '@ngrx/store' in output.globals – guessing 'i1'
+WARNING: No name was provided for external module '@ngrx/effects' in output.globals – guessing 'i2'
+Minifying UMD bundle
+Writing package metadata
+Built ydr-ng-common/auth
+
+------------------------------------------------------------------------------
+Building entry point 'ydr-ng-common/notifications'
+------------------------------------------------------------------------------
+Compiling TypeScript sources through ngc
+Bundling to FESM2015
+Bundling to UMD
+WARNING: No name was provided for external module '@ngrx/store' in output.globals – guessing 'i1$1'
+WARNING: No name was provided for external module '@ngrx/entity' in output.globals – guessing 'entity'
+WARNING: No name was provided for external module '@ngrx/effects' in output.globals – guessing 'i2'
+Minifying UMD bundle
+Writing package metadata
+Built ydr-ng-common/notifications
+
+------------------------------------------------------------------------------
+Building entry point 'ydr-ng-common/user'
+------------------------------------------------------------------------------
+Compiling TypeScript sources through ngc
+Bundling to FESM2015
+Bundling to UMD
+WARNING: No name was provided for external module '@ngrx/store' in output.globals – guessing 'i1'
+WARNING: No name was provided for external module '@ngrx/effects' in output.globals – guessing 'i2'
+Minifying UMD bundle
+Writing package metadata
+Built ydr-ng-common/user
+
+------------------------------------------------------------------------------
+Building entry point 'ydr-ng-common/dashboard'
+------------------------------------------------------------------------------
+Compiling TypeScript sources through ngc
+Bundling to FESM2015
+Bundling to UMD
+Minifying UMD bundle
+Writing package metadata
+Built ydr-ng-common/dashboard
+
+------------------------------------------------------------------------------
+Building entry point 'ydr-ng-common/login'
+------------------------------------------------------------------------------
+Compiling TypeScript sources through ngc
+Bundling to FESM2015
+Bundling to UMD
+Minifying UMD bundle
+Writing package metadata
+Built ydr-ng-common/login
+
+------------------------------------------------------------------------------
+Built Angular Package
+ - from: /Users/n226510/yeray/front/ydr-ng-common/projects/ydr-ng-common
+ - to:   /Users/n226510/yeray/front/ydr-ng-common/dist/ydr-ng-common
+------------------------------------------------------------------------------
+npm WARN registry Using stale data from https://nexus.ss.universia.net/repository/npm-global/ because the host is inaccessible -- are you offline?
+npm WARN registry Using stale data from https://nexus.ss.universia.net/repository/npm-global/ due to a request error during revalidation.
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN ydr-ng-common@0.0.6 requires a peer of @angular/common@^9.0.7 but none is installed. You must install peer dependencies yourself.
+npm WARN ydr-ng-common@0.0.6 requires a peer of @angular/core@^9.0.7 but none is installed. You must install peer dependencies yourself.
+npm WARN ydr-ng-common@0.0.6 No repository field.
+npm WARN ydr-ng-common@0.0.6 No license field.
+
+added 1 package from 1 contributor in 0.17s
+/Users/n226510/.nvm/versions/node/v12.16.1/lib/node_modules/ydr-ng-common -> /Users/n226510/yeray/front/ydr-ng-common/dist/ydr-ng-common
+
+> ydr-ng-common@0.0.5 link /Users/n226510/yeray/front/ydr-ng-common
+> npm run build && cd dist/ydr-ng-common/ && npm link
+
+
+> ydr-ng-common@0.0.5 build /Users/n226510/yeray/front/ydr-ng-common
+> ng build
+
+Building Angular Package
+******************************************************************************
+It is not recommended to publish Ivy libraries to NPM repositories.
+Read more here: https://v9.angular.io/guide/ivy#maintaining-library-compatibility
+******************************************************************************
+
+------------------------------------------------------------------------------
+Building entry point 'ydr-ng-common'
+------------------------------------------------------------------------------
+Compiling TypeScript sources through ngc
+Bundling to FESM2015
+Bundling to UMD
+WARNING: No name was provided for external module '@ngrx/store' in output.globals – guessing 'i1$2'
+WARNING: No name was provided for external module '@ngrx/store-devtools' in output.globals – guessing 'i2'
+WARNING: No name was provided for external module '@ngrx/effects' in output.globals – guessing 'i1$1'
+Minifying UMD bundle
+Copying assets
+Writing package metadata
+Built ydr-ng-common
+
+------------------------------------------------------------------------------
+Building entry point 'ydr-ng-common/registration'
+------------------------------------------------------------------------------
+Compiling TypeScript sources through ngc
+Bundling to FESM2015
+Bundling to UMD
+Minifying UMD bundle
+Writing package metadata
+Built ydr-ng-common/registration
+
+------------------------------------------------------------------------------
+Building entry point 'ydr-ng-common/auth'
+------------------------------------------------------------------------------
+Compiling TypeScript sources through ngc
+Bundling to FESM2015
+Bundling to UMD
+WARNING: No name was provided for external module '@ngrx/store' in output.globals – guessing 'i1'
+WARNING: No name was provided for external module '@ngrx/effects' in output.globals – guessing 'i2'
+Minifying UMD bundle
+Writing package metadata
+Built ydr-ng-common/auth
+
+------------------------------------------------------------------------------
+Building entry point 'ydr-ng-common/notifications'
+------------------------------------------------------------------------------
+Compiling TypeScript sources through ngc
+Bundling to FESM2015
+Bundling to UMD
+WARNING: No name was provided for external module '@ngrx/store' in output.globals – guessing 'i1$1'
+WARNING: No name was provided for external module '@ngrx/entity' in output.globals – guessing 'entity'
+WARNING: No name was provided for external module '@ngrx/effects' in output.globals – guessing 'i2'
+Minifying UMD bundle
+Writing package metadata
+Built ydr-ng-common/notifications
+
+------------------------------------------------------------------------------
+Building entry point 'ydr-ng-common/user'
+------------------------------------------------------------------------------
+Compiling TypeScript sources through ngc
+Bundling to FESM2015
+Bundling to UMD
+WARNING: No name was provided for external module '@ngrx/store' in output.globals – guessing 'i1'
+WARNING: No name was provided for external module '@ngrx/effects' in output.globals – guessing 'i2'
+Minifying UMD bundle
+Writing package metadata
+Built ydr-ng-common/user
+
+------------------------------------------------------------------------------
+Building entry point 'ydr-ng-common/dashboard'
+------------------------------------------------------------------------------
+Compiling TypeScript sources through ngc
+Bundling to FESM2015
+Bundling to UMD
+Minifying UMD bundle
+Writing package metadata
+Built ydr-ng-common/dashboard
+
+------------------------------------------------------------------------------
+Building entry point 'ydr-ng-common/login'
+------------------------------------------------------------------------------
+Compiling TypeScript sources through ngc
+Bundling to FESM2015
+Bundling to UMD
+Minifying UMD bundle
+Writing package metadata
+Built ydr-ng-common/login
+
+------------------------------------------------------------------------------
+Built Angular Package
+ - from: /Users/n226510/yeray/front/ydr-ng-common/projects/ydr-ng-common
+ - to:   /Users/n226510/yeray/front/ydr-ng-common/dist/ydr-ng-common
+------------------------------------------------------------------------------
+npm WARN registry Using stale data from https://nexus.ss.universia.net/repository/npm-global/ because the host is inaccessible -- are you offline?
+npm WARN registry Using stale data from https://nexus.ss.universia.net/repository/npm-global/ due to a request error during revalidation.
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN ydr-ng-common@0.0.6 requires a peer of @angular/common@^9.0.7 but none is installed. You must install peer dependencies yourself.
+npm WARN ydr-ng-common@0.0.6 requires a peer of @angular/core@^9.0.7 but none is installed. You must install peer dependencies yourself.
+npm WARN ydr-ng-common@0.0.6 No repository field.
+npm WARN ydr-ng-common@0.0.6 No license field.
+
+added 1 package from 1 contributor in 0.29s
+/Users/n226510/.nvm/versions/node/v12.16.1/lib/node_modules/ydr-ng-common -> /Users/n226510/yeray/front/ydr-ng-common/dist/ydr-ng-common
+
+> ydr-ng-common@0.0.5 link /Users/n226510/yeray/front/ydr-ng-common
+> npm run build && cd dist/ydr-ng-common/ && npm link
+
+
+> ydr-ng-common@0.0.5 build /Users/n226510/yeray/front/ydr-ng-common
+> ng build
+
+Building Angular Package
+******************************************************************************
+It is not recommended to publish Ivy libraries to NPM repositories.
+Read more here: https://v9.angular.io/guide/ivy#maintaining-library-compatibility
+******************************************************************************
+
+------------------------------------------------------------------------------
+Building entry point 'ydr-ng-common'
+------------------------------------------------------------------------------
+Compiling TypeScript sources through ngc
+Bundling to FESM2015
+Bundling to UMD
+WARNING: No name was provided for external module '@ngrx/store' in output.globals – guessing 'i1$2'
+WARNING: No name was provided for external module '@ngrx/store-devtools' in output.globals – guessing 'i2'
+WARNING: No name was provided for external module '@ngrx/effects' in output.globals – guessing 'i1$1'
+Minifying UMD bundle
+Copying assets
+Writing package metadata
+Built ydr-ng-common
+
+------------------------------------------------------------------------------
+Building entry point 'ydr-ng-common/registration'
+------------------------------------------------------------------------------
+Compiling TypeScript sources through ngc
+Bundling to FESM2015
+Bundling to UMD
+Minifying UMD bundle
+Writing package metadata
+Built ydr-ng-common/registration
+
+------------------------------------------------------------------------------
+Building entry point 'ydr-ng-common/auth'
+------------------------------------------------------------------------------
+Compiling TypeScript sources through ngc
+Bundling to FESM2015
+Bundling to UMD
+WARNING: No name was provided for external module '@ngrx/store' in output.globals – guessing 'i1'
+WARNING: No name was provided for external module '@ngrx/effects' in output.globals – guessing 'i2'
+Minifying UMD bundle
+Writing package metadata
+Built ydr-ng-common/auth
+
+------------------------------------------------------------------------------
+Building entry point 'ydr-ng-common/notifications'
+------------------------------------------------------------------------------
+Compiling TypeScript sources through ngc
+Bundling to FESM2015
+Bundling to UMD
+WARNING: No name was provided for external module '@ngrx/store' in output.globals – guessing 'i1$1'
+WARNING: No name was provided for external module '@ngrx/entity' in output.globals – guessing 'entity'
+WARNING: No name was provided for external module '@ngrx/effects' in output.globals – guessing 'i2'
+Minifying UMD bundle
+Writing package metadata
+Built ydr-ng-common/notifications
+
+------------------------------------------------------------------------------
+Building entry point 'ydr-ng-common/user'
+------------------------------------------------------------------------------
+Compiling TypeScript sources through ngc
+Bundling to FESM2015
+Bundling to UMD
+WARNING: No name was provided for external module '@ngrx/store' in output.globals – guessing 'i1'
+WARNING: No name was provided for external module '@ngrx/effects' in output.globals – guessing 'i2'
+Minifying UMD bundle
+Writing package metadata
+Built ydr-ng-common/user
+
+------------------------------------------------------------------------------
+Building entry point 'ydr-ng-common/dashboard'
+------------------------------------------------------------------------------
+Compiling TypeScript sources through ngc
+Bundling to FESM2015
+Bundling to UMD
+Minifying UMD bundle
+Writing package metadata
+Built ydr-ng-common/dashboard
+
+------------------------------------------------------------------------------
+Building entry point 'ydr-ng-common/login'
+------------------------------------------------------------------------------
+Compiling TypeScript sources through ngc
+Bundling to FESM2015
+Bundling to UMD
+Minifying UMD bundle
+Writing package metadata
+Built ydr-ng-common/login
+
+------------------------------------------------------------------------------
+Built Angular Package
+ - from: /Users/n226510/yeray/front/ydr-ng-common/projects/ydr-ng-common
+ - to:   /Users/n226510/yeray/front/ydr-ng-common/dist/ydr-ng-common
+------------------------------------------------------------------------------
+npm WARN registry Using stale data from https://nexus.ss.universia.net/repository/npm-global/ because the host is inaccessible -- are you offline?
+npm WARN registry Using stale data from https://nexus.ss.universia.net/repository/npm-global/ due to a request error during revalidation.
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN ydr-ng-common@0.0.6 requires a peer of @angular/common@^9.0.7 but none is installed. You must install peer dependencies yourself.
+npm WARN ydr-ng-common@0.0.6 requires a peer of @angular/core@^9.0.7 but none is installed. You must install peer dependencies yourself.
+npm WARN ydr-ng-common@0.0.6 No repository field.
+npm WARN ydr-ng-common@0.0.6 No license field.
+
+added 1 package from 1 contributor in 0.126s
+/Users/n226510/.nvm/versions/node/v12.16.1/lib/node_modules/ydr-ng-common -> /Users/n226510/yeray/front/ydr-ng-common/dist/ydr-ng-common

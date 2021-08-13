@@ -58,4 +58,26 @@ export class ApiService {
       )
     );
   }
+
+  /**
+   * Executes a put request
+   */
+  put(endpoint: string, body: {}): Observable<any> {
+    return this.composeRequestUrl(endpoint).pipe(
+      switchMap(
+        (requestUrl: string) => this.httpService.put(requestUrl, body)
+      )
+    );
+  }
+
+  /**
+   * Executes a put request
+   */
+  delete(endpoint: string): Observable<any> {
+    return this.composeRequestUrl(endpoint).pipe(
+      switchMap(
+        (requestUrl: string) => this.httpService.delete(requestUrl)
+      )
+    );
+  }
 }

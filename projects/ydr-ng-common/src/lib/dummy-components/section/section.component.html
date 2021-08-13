@@ -1,0 +1,5 @@
+<h1 *ngIf="heading" class="section__heading" [innerHTML]="heading"></h1>
+<p *ngIf="subheading" class="section__subheading" [innerHTML]="subheading"></p>
+<ng-content></ng-content>
+<button *ngIf="buttonText" class="section__button" (click)="emitButtonClicked()">{{ buttonText }}</button>
+<p class="section__thanks-to">Photo by {{ imageAuthor }} on Unsplash</p>

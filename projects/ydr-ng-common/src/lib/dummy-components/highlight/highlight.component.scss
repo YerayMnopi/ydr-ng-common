@@ -1,0 +1,29 @@
+@import 'utils/mixins';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.highlight__icon {
+  width: 6.5rem;
+  height: 6.5rem;
+  fill: #34BCBC;
+}
+
+.highlight__heading {
+  font-weight: 800;
+  font-size: 1.8rem;
+  transition: color 0.2s ease;
+  margin-bottom: 2px;
+  color: black;
+  transition: all 0.3s ease-out;
+}
+
+.highlight__paragraph {
+  font-weight: 200;
+  font-size: 1.5rem;
+  width: 75%;
+  text-align: center;
+}

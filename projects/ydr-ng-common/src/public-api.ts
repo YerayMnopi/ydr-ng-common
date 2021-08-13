@@ -6,3 +6,6 @@ export * from './lib/api/api.public-api';
 export * from './lib/testing/testing.public-api';
 export * from './lib/sse/sse.public-api';
 export * from './lib/state/state.module';
+export * from './lib/dummy-components/dummy-components.public-api';
+export * from './lib/animations/animations.public-api';
+export * from './lib/environment/environment.public-api';

@@ -1,15 +1,21 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { Config } from './config.payload';
 import { Observable, of } from 'rxjs';
+import { Environment } from '../environment/environment';
+import { ENVIRONMENT } from '../environment/environment.module';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConfigService {
 
-  apiUrl = 'http://api.localhost';
+  apiUrl: string;
 
-  constructor() { }
+  constructor(
+    @Inject(ENVIRONMENT) private readonly environment: Environment
+  ) {
+    this.apiUrl = this.environment.apiUrl;
+  }
 
   get(): Observable<Config> {
     return of({

@@ -13,6 +13,6 @@ export class UserService {
   ) { }
 
   load(): Observable<UserResponse> {
-    return this.apiService.get(`${this.endpoint}`);
+    return this.apiService.get(`${this.endpoint}/me`);
   }
 }

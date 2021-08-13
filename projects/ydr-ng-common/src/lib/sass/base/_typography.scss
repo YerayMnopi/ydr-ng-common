@@ -7,7 +7,11 @@ body {
 }
 
 html {
-  @include text-adjust(62.25%); //1rem = 10px
+  @include text-adjust(90%);
+
+  @include min-width(phone) {
+    @include text-adjust(62.25%); //1rem = 10px 
+  }
 }
 
 h1 {

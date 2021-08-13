@@ -2,7 +2,7 @@ import { Component, OnInit, ChangeDetectorRef, ChangeDetectionStrategy, OnDestro
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { takeWhile, filter } from 'rxjs/operators';
 import { AuthFacade } from 'ydr-ng-common/auth';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -36,7 +36,8 @@ export class LoginComponent implements OnInit, OnDestroy {
     private readonly authFacade: AuthFacade,
     private readonly changeDetector: ChangeDetectorRef,
     private readonly formBuilder: FormBuilder,
-    private readonly router: Router
+    private readonly router: Router,
+    private readonly activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
@@ -64,7 +65,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       takeWhile(() => this.subscriptionActive),
       filter(token => !!token)
     ).subscribe(
-      token => this.router.navigateByUrl('')
+      token => this.router.navigateByUrl(this.activatedRoute.snapshot.data['redirectTo'] || 'dashboard')
     );
   }
 

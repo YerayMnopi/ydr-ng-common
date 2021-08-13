@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "link": "cd dist/ydr-ng-common/ && npm link",
+    "publish": "npm run build && cd dist/ydr-ng-common && npm publish"
   },
   "dependencies": {
     "@angular/animations": "~10.2.0",

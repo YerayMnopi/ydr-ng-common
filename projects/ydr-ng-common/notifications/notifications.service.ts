@@ -16,7 +16,7 @@ export class NotificationsService extends SseService<Notification[]>{
   }
 
   receive(): Observable<Notification[]> {
-    return this.apiService.composeRequestUrl(this.endpoint).pipe(
+    return this.apiService.composeRequestUrl(`${this.endpoint}/to/me/subscribe`).pipe(
       switchMap((endpoint) => this.GetExchangeData(endpoint))
     );
   }

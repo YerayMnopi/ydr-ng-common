@@ -5,24 +5,29 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    @include padding(8);
 }
 
 .login__heading {
     margin: 2rem;
 }
+
 .login__form {
-    width: 80%;
+    @include padding(4);
+    @include border-radius(lg);
+    background-color: white;
+    width: 100%;
+
+    @include min-width(phone) {
+        max-width: 50vw;
+    }
+
 }
 
 .login__input, .login__submit-button {
     display: block;
     margin: .5rem auto;
     width: 100%;
-
-    @include min-width(phone) {
-        width: 50%;
-    }
 }
 
 .login__error-message {
