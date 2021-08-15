@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { ENVIRONMENT } from '../environment/environment.module';
 
 import { ConfigService } from './config.service';
 
@@ -6,7 +7,11 @@ describe('ConfigService', () => {
   let service: ConfigService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      providers: [
+        {provide: ENVIRONMENT, useValue: ''}
+      ]
+    });
     service = TestBed.inject(ConfigService);
   });
 

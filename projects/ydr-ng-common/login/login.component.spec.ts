@@ -18,7 +18,12 @@ describe('LoginComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ LoginComponent ],
       imports: [
-        RouterTestingModule,
+        RouterTestingModule.withRoutes([
+          {
+            path: 'dashboard',
+            redirectTo: ''
+          }
+        ]),
         ReactiveFormsModule,
       ],
       providers: [
@@ -96,7 +101,7 @@ describe('LoginComponent', () => {
       submitButtonDebugElement.triggerEventHandler('click', null);
       authFacade.changeToken('test');
       
-      expect(routerSpy).toHaveBeenCalledWith('');
+      expect(routerSpy).toHaveBeenCalledWith('dashboard');
     }));
 
     it('should hide the error message until login failed', () => {

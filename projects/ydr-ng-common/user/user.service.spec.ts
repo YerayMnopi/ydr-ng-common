@@ -33,7 +33,7 @@ describe('UserService', () => {
     }));
 
     it('should load an user', () => {
-      expect(apiService.get).toHaveBeenCalledWith(`${service.endpoint}`);
+      expect(apiService.get).toHaveBeenCalledWith(`${service.endpoint}/me`);
     });
 
   });
