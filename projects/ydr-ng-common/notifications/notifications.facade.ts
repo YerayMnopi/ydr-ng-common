@@ -3,7 +3,7 @@ import { Store, select, Action } from '@ngrx/store';
 import { State } from './notifications.reducer';
 import { Observable } from 'rxjs';
 import { selectAllNotifications } from './notifications.selectors';
-import { loadNotifications, loadNotificationsFailure } from './notifications.actions';
+import { loadNotifications, loadNotificationsFailure, receiveNotifications } from './notifications.actions';
 import { Actions, ofType } from '@ngrx/effects';
 import { Notification } from './notification';
 
@@ -23,5 +23,9 @@ export class NotificationsFacade {
 
   load() {
     this.store.dispatch(loadNotifications())
+  }
+
+  receive(userId: string) {
+    this.store.dispatch(receiveNotifications({userId}))
   }
 }

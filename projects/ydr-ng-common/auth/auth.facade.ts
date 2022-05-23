@@ -4,8 +4,9 @@ import { AuthState } from './auth.reducer';
 import { Observable } from 'rxjs';
 import { selectToken } from './auth.selectors';
 import { LoginPayload } from './login-payload';
-import { Login, LoginFailure } from './auth.actions';
+import { Login, LoginFailure, LoginSuccess } from './auth.actions';
 import { Actions, ofType } from '@ngrx/effects';
+import { BrowserService } from 'ydr-ng-common';
 
 @Injectable()
 export class AuthFacade {
@@ -15,8 +16,13 @@ export class AuthFacade {
 
   constructor(
     public store: Store<AuthState>,
-    public actions: Actions
+    public actions: Actions,
+    private readonly browserService: BrowserService
   ) {
+    const loginResponse = this.browserService.retrieveFromLocalStorage('loginResponse');
+    if (loginResponse) {
+      this.store.dispatch(LoginSuccess(loginResponse))
+    }
     this.token = store.pipe(select(selectToken));
     this.loginError = this.actions.pipe(ofType(LoginFailure));
   }

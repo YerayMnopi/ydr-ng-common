@@ -13,3 +13,8 @@ export const loadNotificationsFailure = createAction(
   '[Notification] Load Notifications Failure',
   props<{ error: any }>()
 );
+
+export const receiveNotifications = createAction(
+  '[Notification] Receive Notifications',
+  props<{userId: string}>()
+);

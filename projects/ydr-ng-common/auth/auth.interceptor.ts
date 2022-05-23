@@ -3,20 +3,23 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor
+  HttpInterceptor,
+  HttpErrorResponse
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { AuthFacade } from './auth.facade';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, catchError } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 
   constructor(
-    private readonly authFacade: AuthFacade
+    private readonly authFacade: AuthFacade,
+    private readonly router: Router
   ) {}
 
-  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<any>> {
     return this.authFacade.token.pipe(
       switchMap(token => {
         if (token) {
@@ -27,7 +30,12 @@ export class AuthInterceptor implements HttpInterceptor {
           });
         }
 
-        return next.handle(request);
+        return next.handle(request.clone()).pipe(
+          catchError((error: HttpErrorResponse) => {
+            this.router.navigateByUrl('auth');
+            return throwError(error);
+          })
+        );
       })
     );
   }

@@ -6,6 +6,7 @@ import { of } from 'rxjs';
 import * as AuthActions from './auth.actions';
 import { AuthService} from './auth.service';
 import { LoginResponse } from './login-response';
+import { BrowserService } from 'ydr-ng-common';
 
 
 
@@ -25,7 +26,8 @@ export class AuthEffects {
 
   constructor(
     private readonly actions$: Actions,
-    private readonly authService: AuthService
+    private readonly authService: AuthService,
+    private readonly browserService: BrowserService
   ) {}
 
 }
